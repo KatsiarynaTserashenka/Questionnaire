@@ -1,7 +1,7 @@
 export const data = {
-  nameStartButton: 'Старт',
-  nameNextButton: 'Далее',
-  nameFinishButton: 'Показать результаты',
+  nameStartButton: 'Start',
+  nameNextButton: 'Next',
+  nameFinishButton: 'Show results',
   questions: [
     {
       id: 1,

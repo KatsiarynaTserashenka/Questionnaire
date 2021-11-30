@@ -7,8 +7,6 @@ import { data } from './constants/data';
 const App: FC = () => {
   const [startTest, setStartTest] = useState(false);
   const [userName, setUserName] = useState('');
-  const inputEl = document.getElementById('inputEl');
-  console.log(inputEl);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(e.target.value);
@@ -22,7 +20,7 @@ const App: FC = () => {
     <div className="App">
       {startTest ? (
         <>
-          <h2>Опрос проходит: {userName}</h2>
+          <h2>The quiz is taken by: {userName}</h2>
           <QuestionsContainer />
         </>
       ) : (

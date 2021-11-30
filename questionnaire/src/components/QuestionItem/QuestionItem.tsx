@@ -9,29 +9,30 @@ const QuestionItem: FC = () => {
 
   const showNextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < data.questions.length - 1) {
-      setCurrentQuestion(nextQuestion);
-    } else {
+    setCurrentQuestion(nextQuestion);
+    if (nextQuestion === data.questions.length - 1) {
       setEndOfTest(true);
     }
   };
 
   return (
     <div className="questionsItem">
+      <h3>{data.questions[currentQuestion].quest}</h3>
+      {answers ? (
+        answers.map((answer) => (
+          <div>
+            <input type={data.questions[currentQuestion].answerType} />
+            <span>{answer.answer}</span>
+          </div>
+        ))
+      ) : (
+        <input type={data.questions[currentQuestion].answerType} />
+      )}
+
       {endOfTest ? (
         <Button text={data.nameFinishButton} />
       ) : (
-        <>
-          <h2>{data.questions[currentQuestion].quest}</h2>
-          {answers &&
-            answers.map((answer) => (
-              <div>
-                <input type={data.questions[currentQuestion].answerType} />
-                <span>{answer.answer}</span>
-              </div>
-            ))}
-          <Button text={data.nameNextButton} onClick={showNextQuestion} />
-        </>
+        <Button text={data.nameNextButton} onClick={showNextQuestion} />
       )}
     </div>
   );
