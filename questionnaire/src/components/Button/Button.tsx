@@ -8,7 +8,11 @@ interface IProps {
 const Button: FC<IProps> = (props) => {
   const { text, onClick } = props;
 
-  return <button onClick={onClick}>{text}</button>;
+  return (
+    <button onClick={onClick} type="submit">
+      {text}
+    </button>
+  );
 };
 
 export default Button;
