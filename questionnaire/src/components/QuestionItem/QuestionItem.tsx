@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react';
+import './QuestionItem.css';
 import { data } from '../../constants/data';
 import Button from '../Button';
 import ShowResult from '../ShowResults';
@@ -41,14 +42,17 @@ const QuestionItem: FC = () => {
   };
 
   return (
-    <div className="questionsItem">
+    <div className="questions-container">
       {!showResult ? (
         <>
           <h3>{data.questions[currentQuestion].quest}</h3>
-          <div>
+          <>
             {answers ? (
               answers.map((answer) => (
-                <div key={String(answer.id)}>
+                <div
+                  key={String(answer.id)}
+                  className="questions-container__item"
+                >
                   <input
                     id={String(answer.id)}
                     type={data.questions[currentQuestion].answerType}
@@ -63,6 +67,7 @@ const QuestionItem: FC = () => {
               <input
                 type={data.questions[currentQuestion].answerType}
                 onChange={handleChange}
+                className="questions-container__item--text"
               />
             )}
 
@@ -71,7 +76,7 @@ const QuestionItem: FC = () => {
             ) : (
               <Button text={data.nameNextButton} onClick={showNextQuestion} />
             )}
-          </div>
+          </>
         </>
       ) : (
         <ShowResult />

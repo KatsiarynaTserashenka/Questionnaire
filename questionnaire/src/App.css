@@ -1,0 +1,12 @@
+.App-container {
+  width: 50%;
+  height: 50%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.App-container__form_input {
+  height: 16px;
+  padding: 5px;
+  font-family: 'Inconsolata', monospace;
+}

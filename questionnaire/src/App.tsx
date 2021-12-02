@@ -17,20 +17,21 @@ const App: FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App-container">
       {startTest ? (
         <>
           <h2>The quiz is taken by: {userName}</h2>
           <QuestionsContainer />
         </>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="App-container__form">
           <input
             id="inputEl"
             type="text"
             placeholder="Enter your name"
             onChange={handleChange}
             required
+            className="App-container__form_input"
           />
           <Button text={data.nameStartButton} />
         </form>

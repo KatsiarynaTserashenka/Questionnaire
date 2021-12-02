@@ -1,0 +1,14 @@
+.button {
+  width: 100px;
+  height: 30px;
+  background-color: #303caa;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Inconsolata', monospace;
+}
+
+.button:hover {
+  background-color: #0f1cb1;
+}

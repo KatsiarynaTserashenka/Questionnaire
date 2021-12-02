@@ -1,0 +1,8 @@
+.questions-container__item {
+  margin-bottom: 10px;
+}
+
+.questions-container__item--text {
+  height: 16px;
+  padding: 5px;
+}
